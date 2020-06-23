@@ -6,6 +6,7 @@
   * [Singleton](#singleton)
 * [Structural Patterns](#structural-patterns)
   * [Adapter](#adapter)
+  * [Bridge](#bridge)
 
 
 
@@ -203,4 +204,36 @@ Declare the client interface and describe how clients communicate with the servi
 ### Cons
 The overall complexity of the code increases because you need to introduce a set of new interfaces and classes. Sometimes it’s simpler just to change the service class so that it matches the rest of your code.
 
+
+## Bridge
+[(Code Example)](https://github.com/VitaliyRysich/Design-Patterns/tree/master/src/main/java/structural/bridge)
+
+Bridge is a structural design pattern that lets you split a large class or a set of closely related classes into two separate hierarchies—abstraction and implementation—which can be developed independently of each other.
+
+![](src/main/resources/diagrams/Bridge.png)
+
+1. The Abstraction provides high-level control logic. It relies on the implementation object to do the actual low-level work.
+2. The Implementation declares the interface that’s common for all concrete implementations. An abstraction can only communicate with an implementation object via methods that are declared here.
+   The abstraction may list the same methods as the implementation, but usually the abstraction declares some complex behaviors that rely on a wide variety of primitive operations declared by the implementation.
+3. Concrete Implementations contain platform-specific code.
+4. Refined Abstractions provide variants of control logic. Like their parent, they work with different implementations via the general implementation interface.
+5. Usually, the Client is only interested in working with the abstraction. However, it’s the client’s job to link the abstraction object with one of the implementation objects.
+
+### How to Implement
+1. Identify the orthogonal dimensions in your classes. These independent concepts could be: abstraction/platform, domain/infrastructure, front-end/back-end, or interface/implementation.
+2. See what operations the client needs and define them in the base abstraction class.
+3. Determine the operations available on all platforms. Declare the ones that the abstraction needs in the general implementation interface.
+4. For all platforms in your domain create concrete implementation classes, but make sure they all follow the implementation interface.
+5. Inside the abstraction class, add a reference field for the implementation type. The abstraction delegates most of the work to the implementation object that’s referenced in that field.
+6. If you have several variants of high-level logic, create refined abstractions for each variant by extending the base abstraction class.
+7. The client code should pass an implementation object to the abstraction’s constructor to associate one with the other. After that, the client can forget about the implementation and work only with the abstraction object.
+
+### Pros
+* You can create platform-independent classes and apps.
+* The client code works with high-level abstractions. It isn’t exposed to the platform details.
+* Open/Closed Principle. You can introduce new abstractions and implementations independently from each other.
+* Single Responsibility Principle. You can focus on high-level logic in the abstraction and on platform details in the implementation.
+
+### Cons
+* You might make the code more complicated by applying the pattern to a highly cohesive class.
 
