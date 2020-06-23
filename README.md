@@ -2,7 +2,7 @@
 * [Factory Method](#factory-method)
 * [Abstract Factory](#abstract-factory)
 * [Builder](#builder)
-
+* [Prototype](#prototype)
 
 
 
@@ -40,17 +40,6 @@ Note that the factory method doesn’t have to create new instances all the time
  
  ### Cons
  * The code may become more complicated since you need to introduce a lot of new subclasses to implement the pattern. The best case scenario is when you’re introducing the pattern into an existing hierarchy of creator classes.
- 
- ### Relations with Other Patterns
-* Many designs start by using Factory Method (less complicated and more customizable via subclasses) and evolve toward Abstract Factory, Prototype, or Builder (more flexible, but more complicated).
-
-* Abstract Factory classes are often based on a set of Factory Methods, but you can also use Prototype to compose the methods on these classes.
-
-* You can use Factory Method along with Iterator to let collection subclasses return different types of iterators that are compatible with the collections.
-
-* Prototype isn’t based on inheritance, so it doesn’t have its drawbacks. On the other hand, Prototype requires a complicated initialization of the cloned object. Factory Method is based on inheritance but doesn’t require an initialization step.
-
-* Factory Method is a specialization of Template Method. At the same time, a Factory Method may serve as a step in a large Template Method.
 
 
 ## Abstract Factory
@@ -83,14 +72,6 @@ Abstract Factory is a creational design pattern that lets you produce families o
  ### Cons
  * The code may become more complicated than it should be, since a lot of new interfaces and classes are introduced along with the pattern.
 
- ### Relations with Other Patterns
- * Many designs start by using Factory Method (less complicated and more customizable via subclasses) and evolve toward Abstract Factory, Prototype, or Builder (more flexible, but more complicated).
- * Builder focuses on constructing complex objects step by step. Abstract Factory specializes in creating families of related objects. Abstract Factory returns the product immediately, whereas Builder lets you run some additional construction steps before fetching the product.
- * Abstract Factory classes are often based on a set of Factory Methods, but you can also use Prototype to compose the methods on these classes.
- * Abstract Factory can serve as an alternative to Facade when you only want to hide the way the subsystem objects are created from the client code.
- * You can use Abstract Factory along with Bridge. This pairing is useful when some abstractions defined by Bridge can only work with specific implementations. In this case, Abstract Factory can encapsulate these relations and hide the complexity from the client code.
- * Abstract Factories, Builders and Prototypes can all be implemented as Singletons.
-
 
 ## Builder
 [(Code Example)](https://github.com/VitaliyRysich/Design-Patterns/tree/master/src/main/java/creational/builder)
@@ -122,9 +103,35 @@ Builder is a creational design pattern that lets you construct complex objects s
 ### Cons
 * The overall complexity of the code increases since the pattern requires creating multiple new classes.
 
-### Relations with Other Patterns
-* Many designs start by using Factory Method (less complicated and more customizable via subclasses) and evolve toward Abstract Factory, Prototype, or Builder (more flexible, but more complicated).
-* Builder focuses on constructing complex objects step by step. Abstract Factory specializes in creating families of related objects. Abstract Factory returns the product immediately, whereas Builder lets you run some additional construction steps before fetching the product.
-* You can use Builder when creating complex Composite trees because you can program its construction steps to work recursively.
-* You can combine Builder with Bridge: the director class plays the role of the abstraction, while different builders act as implementations.
-* Abstract Factories, Builders and Prototypes can all be implemented as Singletons.
+
+
+## Prototype
+[(Code Example)](https://github.com/VitaliyRysich/Design-Patterns/tree/master/src/main/java/creational/prototype)
+
+Prototype is a creational design pattern that lets you copy existing objects without making your code dependent on their classes.
+
+![](src/main/resources/diagrams/Prototype.png)
+
+1. The Prototype interface declares the cloning methods. In most cases, it’s a single clone method.
+2. The Concrete Prototype class implements the cloning method. In addition to copying the original object’s data to the clone, this method may also handle some edge cases of the cloning process related to cloning linked objects, untangling recursive dependencies, etc.
+3. The Client can produce a copy of any object that follows the prototype interface.
+
+### How to Implement
+1. Create the prototype interface and declare the clone method in it. Or just add the method to all classes of an existing class hierarchy, if you have one.
+2. A prototype class must define the alternative constructor that accepts an object of that class as an argument. The constructor must copy the values of all fields defined in the class from the passed object into the newly created instance. If you’re changing a subclass, you must call the parent constructor to let the superclass handle the cloning of its private fields.
+3. If your programming language doesn’t support method overloading, you may define a special method for copying the object data. The constructor is a more convenient place to do this because it delivers the resulting object right after you call the new operator.
+4. The cloning method usually consists of just one line: running a new operator with the prototypical version of the constructor. Note, that every class must explicitly override the cloning method and use its own class name along with the new operator. Otherwise, the cloning method may produce an object of a parent class.
+5. Optionally, create a centralized prototype registry to store a catalog of frequently used prototypes.
+6. You can implement the registry as a new factory class or put it in the base prototype class with a static method for fetching the prototype. This method should search for a prototype based on search criteria that the client code passes to the method. The criteria might either be a simple string tag or a complex set of search parameters. After the appropriate prototype is found, the registry should clone it and return the copy to the client.
+7. Finally, replace the direct calls to the subclasses’ constructors with calls to the factory method of the prototype registry.
+
+### Pros
+* You can clone objects without coupling to their concrete classes.
+* You can get rid of repeated initialization code in favor of cloning pre-built prototypes.
+* You can produce complex objects more conveniently.
+* You get an alternative to inheritance when dealing with configuration presets for complex objects.
+
+### Cons
+* Cloning complex objects that have circular references might be very tricky.
+
+
