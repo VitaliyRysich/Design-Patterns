@@ -1,10 +1,10 @@
-### [Creational Patterns](#creational-patterns)
-* [Factory Method](#factory-method)
-* [Abstract Factory](#abstract-factory)
-* [Builder](#builder)
-* [Prototype](#prototype)
-* [Singleton](#singleton)
-### [Structural Patterns](#structural-patterns)
+* [Creational Patterns](#creational-patterns)
+  * [Factory Method](#factory-method)
+  * [Abstract Factory](#abstract-factory)
+  * [Builder](#builder)
+  * [Prototype](#prototype)
+  * [Singleton](#singleton)
+* [Structural Patterns](#structural-patterns)
 
 
 
