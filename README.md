@@ -4,6 +4,7 @@
 * [Builder](#builder)
 * [Prototype](#prototype)
 * [Singleton](#singleton)
+### [Structural Patterns](#structural-patterns)
 
 
 
@@ -164,4 +165,41 @@ Singleton is a creational design pattern that lets you ensure that a class has o
 * The Singleton pattern can mask bad design, for instance, when the components of the program know too much about each other.
 * The pattern requires special treatment in a multithreaded environment so that multiple threads won’t create a singleton object several times.
 * It may be difficult to unit test the client code of the Singleton because many test frameworks rely on inheritance when producing mock objects. Since the constructor of the singleton class is private and overriding static methods is impossible in most languages, you will need to think of a creative way to mock the singleton. Or just don’t write the tests. Or don’t use the Singleton pattern.
+
+
+
+# Structural Patterns
+
+## Adapter
+[(Code Example)](https://github.com/VitaliyRysich/Design-Patterns/tree/master/src/main/java/structural/adapter)
+
+Adapter is a structural design pattern that allows objects with incompatible interfaces to collaborate.
+
+![](src/main/resources/diagrams/Adapter.png)
+
+This implementation uses the object composition principle: the adapter implements the interface of one object and wraps the other one. It can be implemented in all popular programming languages.
+1. The Client is a class that contains the existing business logic of the program.
+2. The Client Interface describes a protocol that other classes must follow to be able to collaborate with the client code.
+3. The Service is some useful class (usually 3rd-party or legacy). The client can’t use this class directly because it has an incompatible interface.
+4. The Adapter is a class that’s able to work with both the client and the service: it implements the client interface, while wrapping the service object. The adapter receives calls from the client via the adapter interface and translates them into calls to the wrapped service object in a format it can understand.
+5. The client code doesn’t get coupled to the concrete adapter class as long as it works with the adapter via the client interface. Thanks to this, you can introduce new types of adapters into the program without breaking the existing client code. This can be useful when the interface of the service class gets changed or replaced: you can just create a new adapter class without changing the client code.
+
+### How to Implement
+
+1. Make sure that you have at least two classes with incompatible interfaces:
+2. A useful service class, which you can’t change (often 3rd-party, legacy or with lots of existing dependencies).
+One or several client classes that would benefit from using the service class.
+Declare the client interface and describe how clients communicate with the service.
+3. Create the adapter class and make it follow the client interface. Leave all the methods empty for now.
+4. Add a field to the adapter class to store a reference to the service object. The common practice is to initialize this field via the constructor, but sometimes it’s more convenient to pass it to the adapter when calling its methods.
+5. One by one, implement all methods of the client interface in the adapter class. The adapter should delegate most of the real work to the service object, handling only the interface or data format conversion.
+6. Clients should use the adapter via the client interface. This will let you change or extend the adapters without affecting the client code.
+
+### Pros
+* Single Responsibility Principle. You can separate the interface or data conversion code from the primary business logic of the program.
+* Open/Closed Principle. You can introduce new types of adapters into the program without breaking the existing client code, as long as they work with the adapters through the client interface.
+
+### Cons
+The overall complexity of the code increases because you need to introduce a set of new interfaces and classes. Sometimes it’s simpler just to change the service class so that it matches the rest of your code.
+
 
