@@ -5,6 +5,7 @@
   * [Prototype](#prototype)
   * [Singleton](#singleton)
 * [Structural Patterns](#structural-patterns)
+  * [Adapter](#adapter)
 
 
 
