@@ -7,6 +7,7 @@
 * [Structural Patterns](#structural-patterns)
   * [Adapter](#adapter)
   * [Bridge](#bridge)
+  * [Composite](#composite)
 
 
 
@@ -236,4 +237,35 @@ Bridge is a structural design pattern that lets you split a large class or a set
 
 ### Cons
 * You might make the code more complicated by applying the pattern to a highly cohesive class.
+
+
+## Composite
+[(Code Example)](https://github.com/VitaliyRysich/Design-Patterns/tree/master/src/main/java/structural/composite)
+
+Composite is a structural design pattern that lets you compose objects into tree structures and then work with these structures as if they were individual objects.
+
+![](src/main/resources/diagrams/Composite.png)
+
+1. The Component interface describes operations that are common to both simple and complex elements of the tree.
+2. The Leaf is a basic element of a tree that doesn’t have sub-elements.
+   Usually, leaf components end up doing most of the real work, since they don’t have anyone to delegate the work to.
+3. The Container (aka composite) is an element that has sub-elements: leaves or other containers. A container doesn’t know the concrete classes of its children. It works with all sub-elements only via the component interface.
+   Upon receiving a request, a container delegates the work to its sub-elements, processes intermediate results and then returns the final result to the client.
+4. The Client works with all elements through the component interface. As a result, the client can work in the same way with both simple or complex elements of the tree.
+
+### How to Implement
+1. Make sure that the core model of your app can be represented as a tree structure. Try to break it down into simple elements and containers. Remember that containers must be able to contain both simple elements and other containers.
+2. Declare the component interface with a list of methods that make sense for both simple and complex components.
+3. Create a leaf class to represent simple elements. A program may have multiple different leaf classes.
+4. Create a container class to represent complex elements. In this class, provide an array field for storing references to sub-elements. The array must be able to store both leaves and containers, so make sure it’s declared with the component interface type.
+5. While implementing the methods of the component interface, remember that a container is supposed to be delegating most of the work to sub-elements.
+6. Finally, define the methods for adding and removal of child elements in the container.
+7. Keep in mind that these operations can be declared in the component interface. This would violate the Interface Segregation Principle because the methods will be empty in the leaf class. However, the client will be able to treat all the elements equally, even when composing the tree.
+
+### Pros
+* You can work with complex tree structures more conveniently: use polymorphism and recursion to your advantage.
+* Open/Closed Principle. You can introduce new element types into the app without breaking the existing code, which now works with the object tree.
+
+### Cons
+* It might be difficult to provide a common interface for classes whose functionality differs too much. In certain scenarios, you’d need to overgeneralize the component interface, making it harder to comprehend.
 
