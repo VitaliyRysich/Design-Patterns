@@ -8,6 +8,8 @@
   * [Adapter](#adapter)
   * [Bridge](#bridge)
   * [Composite](#composite)
+  * [Adapter](#decorator)
+  * [Facade](#facade)
 
 
 
@@ -302,3 +304,29 @@ Decorator is a structural design pattern that lets you attach new behaviors to o
 * It’s hard to remove a specific wrapper from the wrappers stack.
 * It’s hard to implement a decorator in such a way that its behavior doesn’t depend on the order in the decorators stack.
 * The initial configuration code of layers might look pretty ugly.
+
+
+## Facade
+[(Code Example)](https://github.com/VitaliyRysich/Design-Patterns/tree/master/src/main/java/structural/facade)
+
+Facade is a structural design pattern that provides a simplified interface to a library, a framework, or any other complex set of classes.
+
+![](src/main/resources/diagrams/Facade.png)
+
+1. The Facade provides convenient access to a particular part of the subsystem’s functionality. It knows where to direct the client’s request and how to operate all the moving parts.
+2. An Additional Facade class can be created to prevent polluting a single facade with unrelated features that might make it yet another complex structure. Additional facades can be used by both clients and other facades.
+3. The Complex Subsystem consists of dozens of various objects. To make them all do something meaningful, you have to dive deep into the subsystem’s implementation details, such as initializing objects in the correct order and supplying them with data in the proper format.
+   Subsystem classes aren’t aware of the facade’s existence. They operate within the system and work with each other directly.
+4. The Client uses the facade instead of calling the subsystem objects directly.
+
+### How to Implement
+1. Check whether it’s possible to provide a simpler interface than what an existing subsystem already provides. You’re on the right track if this interface makes the client code independent from many of the subsystem’s classes.
+2. Declare and implement this interface in a new facade class. The facade should redirect the calls from the client code to appropriate objects of the subsystem. The facade should be responsible for initializing the subsystem and managing its further life cycle unless the client code already does this.
+3. To get the full benefit from the pattern, make all the client code communicate with the subsystem only via the facade. Now the client code is protected from any changes in the subsystem code. For example, when a subsystem gets upgraded to a new version, you will only need to modify the code in the facade.
+4. If the facade becomes too big, consider extracting part of its behavior to a new, refined facade class.
+
+### Pros
+* You can isolate your code from the complexity of a subsystem.
+
+### Cons
+* A facade can become a god object coupled to all classes of an app.
