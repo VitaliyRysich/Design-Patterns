@@ -2,16 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f84b0143-2c38-4ed2-a851-f042a8cb3980" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/structural/facade/Demo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/structural/facade/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/structural/facade/facade/VideoConversionFacade.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/structural/facade/some_complex_media_library/AudioMixer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/structural/facade/some_complex_media_library/BitrateReader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/structural/facade/some_complex_media_library/Codec.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/structural/facade/some_complex_media_library/CodecFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/structural/facade/some_complex_media_library/MPEG4CompressionCodec.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/structural/facade/some_complex_media_library/OggCompressionCodec.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/structural/facade/some_complex_media_library/VideoFile.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/structural/flyweight/Demo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/structural/flyweight/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/structural/flyweight/forest/Forest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/structural/flyweight/trees/Tree.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/structural/flyweight/trees/TreeFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/structural/flyweight/trees/TreeType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/diagrams/Flyweight.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
@@ -41,62 +38,77 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="448">
-              <caret line="313" column="38" selection-start-line="313" selection-start-column="38" selection-end-line="313" selection-end-column="38" />
+            <state relative-caret-position="377">
+              <caret line="353" selection-start-line="353" selection-end-line="353" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/structural/facade/some_complex_media_library/Codec.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/structural/flyweight/README.md">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="34">
-              <caret line="2" column="22" selection-start-line="2" selection-start-column="22" selection-end-line="2" selection-end-column="22" />
+              <caret line="2" column="372" selection-start-line="2" selection-start-column="372" selection-end-line="2" selection-end-column="372" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/structural/facade/some_complex_media_library/MPEG4CompressionCodec.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/structural/flyweight/trees/Tree.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="1" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
+            <state relative-caret-position="255">
+              <caret line="15" column="26" selection-start-line="15" selection-start-column="26" selection-end-line="15" selection-end-column="26" />
+              <folding>
+                <element signature="e#276#277#0" expanded="true" />
+                <element signature="e#310#311#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/structural/facade/some_complex_media_library/OggCompressionCodec.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/structural/flyweight/trees/TreeFactory.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="1" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="1" />
+            <state relative-caret-position="289">
+              <caret line="17" column="1" selection-start-line="17" selection-start-column="1" selection-end-line="17" selection-end-column="1" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/structural/facade/some_complex_media_library/CodecFactory.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/structural/flyweight/forest/Forest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="14" column="1" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
+            <state relative-caret-position="255">
+              <caret line="15" column="15" lean-forward="true" selection-start-line="15" selection-start-column="15" selection-end-line="15" selection-end-column="15" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/structural/facade/some_complex_media_library/BitrateReader.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/structural/flyweight/Demo.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="12" column="1" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
+            <state relative-caret-position="442">
+              <caret line="26" column="80" lean-forward="true" selection-start-line="26" selection-start-column="80" selection-end-line="26" selection-end-column="80" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1322#1323#0" expanded="true" />
+                <element signature="e#1392#1393#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/structural/facade/some_complex_media_library/AudioMixer.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/structural/flyweight/trees/TreeType.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" column="1" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
+            <state relative-caret-position="357">
+              <caret line="21" column="1" selection-start-line="21" selection-start-column="1" selection-end-line="21" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -143,12 +155,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/creational/builder/README.md" />
-        <option value="$PROJECT_DIR$/src/main/java/creational/prototype/README.md" />
-        <option value="$PROJECT_DIR$/src/main/java/creational/prototype/shapes/Shape.java" />
-        <option value="$PROJECT_DIR$/src/main/java/creational/prototype/shapes/Circle.java" />
-        <option value="$PROJECT_DIR$/src/main/java/creational/prototype/shapes/Rectangle.java" />
-        <option value="$PROJECT_DIR$/src/main/java/creational/prototype/Demo.java" />
         <option value="$PROJECT_DIR$/src/main/java/creational/singleton/Singleton.java" />
         <option value="$PROJECT_DIR$/src/main/java/creational/singleton/DemoSingleThread.java" />
         <option value="$PROJECT_DIR$/src/main/java/creational/singleton/README.md" />
@@ -193,6 +199,12 @@
         <option value="$PROJECT_DIR$/src/main/java/structural/facade/some_complex_media_library/AudioMixer.java" />
         <option value="$PROJECT_DIR$/src/main/java/structural/facade/facade/VideoConversionFacade.java" />
         <option value="$PROJECT_DIR$/src/main/java/structural/facade/Demo.java" />
+        <option value="$PROJECT_DIR$/src/main/java/structural/flyweight/README.md" />
+        <option value="$PROJECT_DIR$/src/main/java/structural/flyweight/trees/TreeType.java" />
+        <option value="$PROJECT_DIR$/src/main/java/structural/flyweight/trees/Tree.java" />
+        <option value="$PROJECT_DIR$/src/main/java/structural/flyweight/trees/TreeFactory.java" />
+        <option value="$PROJECT_DIR$/src/main/java/structural/flyweight/forest/Forest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/structural/flyweight/Demo.java" />
         <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
@@ -276,7 +288,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/structural/facade" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/structural/flyweight" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -291,11 +303,11 @@
       <recent name="creational" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Users\virysi\N\Programs\DesignPatterns\src\main\java\structural\flyweight" />
       <recent name="D:\Users\virysi\N\Programs\DesignPatterns\src\main\java\structural\facade" />
       <recent name="D:\Users\virysi\N\Programs\DesignPatterns\src\main\java\structural\decorator" />
       <recent name="D:\Users\virysi\N\Programs\DesignPatterns\src\main\java\structural\composite" />
       <recent name="D:\Users\virysi\N\Programs\DesignPatterns\src\main\java\structural\bridge" />
-      <recent name="D:\Users\virysi\N\Programs\DesignPatterns\src\main\java\structural\adapter" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\Users\virysi\N\Programs\DesignPatterns\src\main\resources\diagrams" />
@@ -314,7 +326,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Demo (1)">
+  <component name="RunManager" selected="Application.Demo (2)">
     <configuration name="Demo (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="structural.facade.Demo" />
       <module name="DesignPatterns" />
@@ -328,12 +340,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Demo (3)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="creational.prototype.Demo" />
+    <configuration name="Demo (2)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="structural.flyweight.Demo" />
       <module name="DesignPatterns" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="creational.prototype.*" />
+          <option name="PATTERN" value="structural.flyweight.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -382,11 +394,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Demo (2)" />
         <item itemvalue="Application.Demo (1)" />
         <item itemvalue="Application.Demo" />
         <item itemvalue="Application.Demo (4)" />
         <item itemvalue="Application.DemoSingleThread" />
-        <item itemvalue="Application.Demo (3)" />
       </list>
     </recent_temporary>
   </component>
@@ -471,7 +483,14 @@
       <option name="project" value="LOCAL" />
       <updated>1593088223956</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Facade">
+      <created>1593089144993</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1593089144993</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -518,62 +537,10 @@
     <MESSAGE value="Bridge" />
     <MESSAGE value="Composite" />
     <MESSAGE value="Decorator" />
-    <option name="LAST_COMMIT_MESSAGE" value="Decorator" />
+    <MESSAGE value="Facade" />
+    <option name="LAST_COMMIT_MESSAGE" value="Facade" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/creational/prototype/README.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="99" selection-start-line="2" selection-start-column="99" selection-end-line="2" selection-end-column="99" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/creational/prototype/shapes/Shape.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="30" column="5" selection-start-line="30" selection-start-column="5" selection-end-line="30" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/creational/prototype/shapes/Circle.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="26" column="1" selection-start-line="26" selection-start-column="1" selection-end-line="26" selection-end-column="1" />
-          <folding>
-            <element signature="e#312#313#0" expanded="true" />
-            <element signature="e#351#352#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/creational/prototype/Demo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="466">
-          <caret line="52" lean-forward="true" selection-start-line="52" selection-end-line="52" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/creational/prototype/shapes/Rectangle.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="28" column="1" selection-start-line="28" selection-start-column="1" selection-end-line="28" selection-end-column="1" />
-          <folding>
-            <element signature="e#385#386#0" expanded="true" />
-            <element signature="e#427#428#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/creational/singleton/Singleton.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" column="1" selection-start-line="22" selection-start-column="1" selection-end-line="22" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/creational/singleton/README.md">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -1053,10 +1020,67 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/structural/flyweight/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="372" selection-start-line="2" selection-start-column="372" selection-end-line="2" selection-end-column="372" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/structural/flyweight/trees/Tree.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="26" selection-start-line="15" selection-start-column="26" selection-end-line="15" selection-end-column="26" />
+          <folding>
+            <element signature="e#276#277#0" expanded="true" />
+            <element signature="e#310#311#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/structural/flyweight/forest/Forest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="15" lean-forward="true" selection-start-line="15" selection-start-column="15" selection-end-line="15" selection-end-column="15" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/structural/flyweight/trees/TreeFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="1" selection-start-line="17" selection-start-column="1" selection-end-line="17" selection-end-column="1" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/structural/flyweight/trees/TreeType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="21" column="1" selection-start-line="21" selection-start-column="1" selection-end-line="21" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/structural/flyweight/Demo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="26" column="80" lean-forward="true" selection-start-line="26" selection-start-column="80" selection-end-line="26" selection-end-column="80" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1322#1323#0" expanded="true" />
+            <element signature="e#1392#1393#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="448">
-          <caret line="313" column="38" selection-start-line="313" selection-start-column="38" selection-end-line="313" selection-end-column="38" />
+        <state relative-caret-position="377">
+          <caret line="353" selection-start-line="353" selection-end-line="353" />
         </state>
       </provider>
     </entry>
