@@ -11,7 +11,7 @@
   * [Decorator](#decorator)
   * [Facade](#facade)
   * [Flyweight](#flyweight)
-
+  * [Proxy](#proxy)
 
 
 # Creational Patterns
@@ -365,3 +365,40 @@ Flyweight is a structural design pattern that lets you fit more objects into the
 ### Cons
 * You might be trading RAM over CPU cycles when some of the context data needs to be recalculated each time somebody calls a flyweight method.
 * The code becomes much more complicated. New team members will always be wondering why the state of an entity was separated in such a way.
+
+
+## Proxy
+[(Code Example)](https://github.com/VitaliyRysich/Design-Patterns/tree/master/src/main/java/structural/proxy)
+
+Proxy is a structural design pattern that lets you provide a substitute or placeholder for another object. A proxy controls access to the original object, allowing you to perform something either before or after the request gets through to the original object.
+
+![](src/main/resources/diagrams/Proxy.png)
+
+
+1. The Service Interface declares the interface of the Service. The proxy must follow this interface to be able to disguise itself as a service object.
+2. The Service is a class that provides some useful business logic.
+3. The Proxy class has a reference field that points to a service object. After the proxy finishes its processing (e.g., lazy initialization, logging, access control, caching, etc.), it passes the request to the service object.
+   Usually, proxies manage the full lifecycle of their service objects.
+4. The Client should work with both services and proxies via the same interface. This way you can pass a proxy into any code that expects a service object.
+
+### How to Implement
+1. If there’s no pre-existing service interface, create one to make proxy and service objects interchangeable. Extracting the interface from the service class isn’t always possible, because you’d need to change all of the service’s clients to use that interface. Plan B is to make the proxy a subclass of the service class, and this way it’ll inherit the interface of the service.
+2. Create the proxy class. It should have a field for storing a reference to the service. Usually, proxies create and manage the whole life cycle of their services. On rare occasions, a service is passed to the proxy via a constructor by the client.
+3. Implement the proxy methods according to their purposes. In most cases, after doing some work, the proxy should delegate the work to the service object.
+4. Consider introducing a creation method that decides whether the client gets a proxy or a real service. This can be a simple static method in the proxy class or a full-blown factory method.
+5. Consider implementing lazy initialization for the service object.
+
+
+### Pros
+* You can control the service object without clients knowing about it.
+* You can manage the lifecycle of the service object when clients don’t care about it.
+* The proxy works even if the service object isn’t ready or is not available.
+* Open/Closed Principle. You can introduce new proxies without changing the service or clients.
+
+### Cons
+* The code may become more complicated since you need to introduce a lot of new classes.
+* The response from the service might get delayed.
+
+
+
+
